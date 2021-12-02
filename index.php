@@ -1,23 +1,17 @@
 <?php
 require_once "./classes/Movie.php";
+require_once "./data/moviesList.php";
 
-$moviesList = [
-  [
-    "title" => "The Godfather",
-    "releaseDate" => "1972",
-    "director" => "Francis Ford Coppola",
-    "genre" => "Crime, Drama",
-  ],
-  [
-    "title" => "The Irishman",
-    "releaseDate" => "2019",
-    "director" => "Martin Scorsese",
-    "genre" => "Biography, Crime, Drama",
-  ],
-];
+// Version 1
+// $movie1 = new Movie($moviesList[0]);
+// $movie2 = new Movie($moviesList[1]);
 
-$movie1 = new Movie($moviesList[0]);
-$movie2 = new Movie($moviesList[1]);
+// var_dump($movie1);
+// var_dump($movie2);
 
-var_dump($movie1);
-var_dump($movie2);
+// Version using a foreach
+
+foreach ($moviesList as $movie) {
+  $selectedMovie = new Movie($movie);
+  var_dump($selectedMovie);
+}
